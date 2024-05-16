@@ -5,6 +5,8 @@
 
 using namespace std; 
 
+bool isNumber(char x){return (x >= '0' && x <= '9');}
+
 int main()
 {
     string s;
@@ -13,7 +15,7 @@ int main()
     {
         int i = 5;
         string gno;
-        while(int(s[i]) >= 48 && int(s[i]) <= 57)
+        while(isNumber(s[i))
         {
             gno.push_back(s[i]);
             i++;
@@ -22,11 +24,11 @@ int main()
         vector<int> b, g, r;
         while(i < s.length())
         {
-            if(int(s[i]) >= 48 && int(s[i]) <= 57)
+            if(isNumber(s[i))
             {
                 string t;
                 t.push_back(s[i]);
-                while(int(s[i+1]) >= 48 && int(s[i+1]) <= 57) 
+                while(isNumber(s[i+1)) 
                 {
                     t.push_back(s[i+1]);
                     i++;
